@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "SmartZoom",
+    "version": "1.0",
+    "description": "Bring MacOS 2 fingers double-tap to Chromium browsers on all OSes. Double right-click to zoom-in, double right-click again or ESC to zoom-out.",
+    "action": {
+        "default_icon": {
+            "16": "/images/i16.png",
+            "32": "/images/i32.png",
+            "48": "/images/i48.png",
+            "128": "/images/i128.png"
+        }
+    },
+    "icons": {
+        "16": "/images/i16.png",
+        "32": "/images/i32.png",
+        "48": "/images/i48.png",
+        "128": "/images/i128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "js/zoom.js",
+                "js/inject.js"
+            ]
+        }
+    ]
+}
