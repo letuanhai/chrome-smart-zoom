@@ -13,12 +13,12 @@ var zoom = (function(){
 	var level = 1;
 
 	// The current mouse position, used for panning
-	var mouseX = 0,
-		mouseY = 0;
+	// var mouseX = 0,
+	// 	mouseY = 0;
 
 	// Timeout before pan is activated
-	var panEngageTimeout = -1,
-		panUpdateInterval = -1;
+	// var panEngageTimeout = -1,
+	// 	panUpdateInterval = -1;
 
 	// Timeout for callback function
 	var callbackTimeout = -1;
@@ -47,12 +47,12 @@ var zoom = (function(){
 	} );
 
 	// Monitor mouse movement for panning
-	document.addEventListener( 'mousemove', function( event ) {
-		if( level !== 1 ) {
-			mouseX = event.clientX;
-			mouseY = event.clientY;
-		}
-	} );
+	// document.addEventListener( 'mousemove', function( event ) {
+	// 	if( level !== 1 ) {
+	// 		mouseX = event.clientX;
+	// 		mouseY = event.clientY;
+	// 	}
+	// } );
 
 	/**
 	 * Applies the CSS required to zoom in, prefers the use of CSS3
@@ -128,30 +128,30 @@ var zoom = (function(){
 	 * Pan the document when the mouse cursor approaches the edges
 	 * of the window.
 	 */
-	function pan() {
-		var range = 0.12,
-			rangeX = window.innerWidth * range,
-			rangeY = window.innerHeight * range,
-			scrollOffset = getScrollOffset();
+	// function pan() {
+	// 	var range = 0.12,
+	// 		rangeX = window.innerWidth * range,
+	// 		rangeY = window.innerHeight * range,
+	// 		scrollOffset = getScrollOffset();
 
-		// Up
-		if( mouseY < rangeY ) {
-			window.scroll( scrollOffset.x, scrollOffset.y - ( 1 - ( mouseY / rangeY ) ) * ( 14 / level ) );
-		}
-		// Down
-		else if( mouseY > window.innerHeight - rangeY ) {
-			window.scroll( scrollOffset.x, scrollOffset.y + ( 1 - ( window.innerHeight - mouseY ) / rangeY ) * ( 14 / level ) );
-		}
+	// 	// Up
+	// 	if( mouseY < rangeY ) {
+	// 		window.scroll( scrollOffset.x, scrollOffset.y - ( 1 - ( mouseY / rangeY ) ) * ( 14 / level ) );
+	// 	}
+	// 	// Down
+	// 	else if( mouseY > window.innerHeight - rangeY ) {
+	// 		window.scroll( scrollOffset.x, scrollOffset.y + ( 1 - ( window.innerHeight - mouseY ) / rangeY ) * ( 14 / level ) );
+	// 	}
 
-		// Left
-		if( mouseX < rangeX ) {
-			window.scroll( scrollOffset.x - ( 1 - ( mouseX / rangeX ) ) * ( 14 / level ), scrollOffset.y );
-		}
-		// Right
-		else if( mouseX > window.innerWidth - rangeX ) {
-			window.scroll( scrollOffset.x + ( 1 - ( window.innerWidth - mouseX ) / rangeX ) * ( 14 / level ), scrollOffset.y );
-		}
-	}
+	// 	// Left
+	// 	if( mouseX < rangeX ) {
+	// 		window.scroll( scrollOffset.x - ( 1 - ( mouseX / rangeX ) ) * ( 14 / level ), scrollOffset.y );
+	// 	}
+	// 	// Right
+	// 	else if( mouseX > window.innerWidth - rangeX ) {
+	// 		window.scroll( scrollOffset.x + ( 1 - ( window.innerWidth - mouseX ) / rangeX ) * ( 14 / level ), scrollOffset.y );
+	// 	}
+	// }
 
 	function getScrollOffset() {
 		return {
@@ -214,15 +214,15 @@ var zoom = (function(){
 
 					magnify( options, options.scale );
 
-					if( options.pan !== false ) {
+					// if( options.pan !== false ) {
 
-						// Wait with engaging panning as it may conflict with the
-						// zoom transition
-						panEngageTimeout = setTimeout( function() {
-							panUpdateInterval = setInterval( pan, 1000 / 60 );
-						}, TRANSITION_DURATION );
+					// 	// Wait with engaging panning as it may conflict with the
+					// 	// zoom transition
+					// 	panEngageTimeout = setTimeout( function() {
+					// 		panUpdateInterval = setInterval( pan, 1000 / 60 );
+					// 	}, TRANSITION_DURATION );
 
-					}
+					// }
 
 					if( typeof options.callback === 'function' ) {
 						callbackTimeout = setTimeout( options.callback, TRANSITION_DURATION );
@@ -238,8 +238,8 @@ var zoom = (function(){
 		 *   - callback: call back when zooming out ends
 		 */
 		out: function( options ) {
-			clearTimeout( panEngageTimeout );
-			clearInterval( panUpdateInterval );
+			// clearTimeout( panEngageTimeout );
+			// clearInterval( panUpdateInterval );
 			clearTimeout( callbackTimeout );
 
 			magnify( { x: 0, y: 0 }, 1 );
