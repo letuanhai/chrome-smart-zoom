@@ -45,12 +45,9 @@ function setupEventListeners(trigger) {
             }
         }));
     } else {
-        // Use mousedown for right mouse button (default)
-        // Using mousedown instead of contextmenu to prevent menu interference
-        body.addEventListener('mousedown', makeDoubleClickHandler(function (event) {
-            if (event.button === 2) { // Right mouse button
-                zoom.to({ element: event.target, padding: zoomPadding });
-            }
+        // contextmenu event is only triggerred for right-click so no key checking is needed
+        body.addEventListener('contextmenu', makeDoubleClickHandler(function (event) {
+            zoom.to({ element: event.target, padding: zoomPadding });
         }));
     }
 }
