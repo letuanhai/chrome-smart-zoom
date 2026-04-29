@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "SmartZoom",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Bring MacOS 2-finger double-tap to Chromium browsers on all OSes. Double right-click or double middle-click to zoom in and out (or ESC to zoom out)",
     "action": {
         "default_icon": {
