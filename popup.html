@@ -91,9 +91,14 @@
             outline: none;
             border-color: #4CAF50;
         }
-        .padding-hint {
+        .padding-hint, .duration-hint {
             font-size: 12px;
             color: #888;
+        }
+        .duration-group {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #e0e0e0;
         }
     </style>
 </head>
@@ -124,6 +129,12 @@
             <label for="padding">Zoom padding (px)</label>
             <input type="number" id="padding" min="0" max="500" value="20" placeholder="20">
             <div class="padding-hint">Space around the zoomed element (0-500px)</div>
+        </div>
+        
+        <div class="option-group duration-group">
+            <label for="duration">Transition duration (ms)</label>
+            <input type="number" id="duration" min="0" max="2000" value="400" placeholder="400" step="50">
+            <div class="duration-hint">Zoom animation speed in milliseconds (0-2000ms)</div>
         </div>
     </div>
     

@@ -257,6 +257,22 @@ var zoom = (function(){
 
 		zoomLevel: function() {
 			return level;
+		},
+
+		/**
+		 * Sets the transition duration for zoom animations.
+		 *
+		 * @param {Number} duration - Duration in milliseconds
+		 */
+		setTransitionDuration: function( duration ) {
+			TRANSITION_DURATION = duration;
+			if( supportsTransforms ) {
+				document.body.style.transition = 'transform '+ TRANSITION_DURATION +'ms ease';
+				document.body.style.OTransition = '-o-transform '+ TRANSITION_DURATION +'ms ease';
+				document.body.style.msTransition = '-ms-transform '+ TRANSITION_DURATION +'ms ease';
+				document.body.style.MozTransition = '-moz-transform '+ TRANSITION_DURATION +'ms ease';
+				document.body.style.WebkitTransition = '-webkit-transform '+ TRANSITION_DURATION +'ms ease';
+			}
 		}
 	}
 

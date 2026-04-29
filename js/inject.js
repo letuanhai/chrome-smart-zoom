@@ -1,6 +1,7 @@
 // Default settings
 const DEFAULT_TRIGGER = 'right';
 const DEFAULT_PADDING = 20;
+const DEFAULT_DURATION = 400;
 let zoomPadding = DEFAULT_PADDING;
 
 // Double-click handler factory
@@ -25,8 +26,10 @@ function makeDoubleClickHandler(handler) {
 
 // Initialize event listeners based on settings
 function init() {
-    chrome.storage.sync.get({ trigger: DEFAULT_TRIGGER, padding: DEFAULT_PADDING }, function(items) {
+    chrome.storage.sync.get({ trigger: DEFAULT_TRIGGER, padding: DEFAULT_PADDING, duration: DEFAULT_DURATION }, function(items) {
         zoomPadding = typeof items.padding === 'number' ? items.padding : DEFAULT_PADDING;
+        const duration = typeof items.duration === 'number' ? items.duration : DEFAULT_DURATION;
+        zoom.setTransitionDuration(duration);
         setupEventListeners(items.trigger);
     });
 }
@@ -65,6 +68,10 @@ chrome.storage.onChanged.addListener(function(changes, area) {
         if (changes.padding) {
             // Update padding immediately without reload
             zoomPadding = changes.padding.newValue;
+        }
+        if (changes.duration) {
+            // Update transition duration immediately without reload
+            zoom.setTransitionDuration(changes.duration.newValue);
         }
     }
 });
