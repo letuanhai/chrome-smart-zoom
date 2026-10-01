@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- Optional "SmartZoom: zoom in / out" context menu entry (off by default)
+- "None" zoom trigger to disable mouse double-click zooming
+
 ## [1.1.0] - 2026-04-29
 
 ### Added

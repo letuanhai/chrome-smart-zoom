@@ -2,7 +2,8 @@
 const DEFAULTS = {
     trigger: 'right', // 'right' or 'middle'
     padding: 20,
-    duration: 400
+    duration: 400,
+    contextMenu: false
 };
 
 // Load saved settings
@@ -23,6 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const duration = typeof items.duration === 'number' ? items.duration : DEFAULTS.duration;
         const durationInput = document.getElementById('duration');
         durationInput.value = duration;
+
+        document.getElementById('contextMenu').checked = items.contextMenu;
+    });
+
+    document.getElementById('contextMenu').addEventListener('change', function() {
+        chrome.storage.sync.set({ contextMenu: this.checked });
     });
     
     // Add event listeners to radio buttons

@@ -11,16 +11,18 @@ HOW IT WORKS
 
 SETTINGS
 Click the SmartZoom toolbar icon to change:
-• Zoom trigger: double right-click (default) or double middle-click. Middle-click keeps the context menu completely untouched.
+• Zoom trigger: double right-click (default), double middle-click, or none. Middle-click keeps the context menu completely untouched.
+• Context menu entry: add "SmartZoom: zoom in / out" to the right-click menu to zoom without double-clicking.
 • Zoom padding: space left around the zoomed element (0–500 px).
 • Transition duration: speed of the zoom animation (0–2000 ms).
 Settings are saved with Chrome sync and take effect immediately.
 
 PRIVACY
-SmartZoom works entirely in the page you are viewing. It collects no data, makes no network requests and only uses the "storage" permission to remember your settings.
+SmartZoom works entirely in the page you are viewing. It collects no data, makes no network requests Its only permissions are "storage" (to remember your settings) and "contextMenus" (for the optional right-click menu entry).
 
 WHAT'S NEW IN 1.1
 • New settings popup: choose the zoom trigger, padding and animation speed.
+• Optional right-click menu entry to zoom in / out, and a "none" trigger to turn off double-click zooming.
 • Removed mouse panning while zoomed for a steadier zoom.
 
 Credits: zoom.js by Hakim El Hattab (MIT). Icon by Dryicons.

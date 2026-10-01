@@ -44,13 +44,26 @@ function setupEventListeners(trigger) {
                 zoom.to({ element: event.target, padding: zoomPadding });
             }
         }));
-    } else {
+    } else if (trigger === 'right') {
         // contextmenu event is only triggerred for right-click so no key checking is needed
         body.addEventListener('contextmenu', makeDoubleClickHandler(function (event) {
             zoom.to({ element: event.target, padding: zoomPadding });
         }));
     }
 }
+
+// Remember what was right-clicked so the context menu entry knows what to zoom to
+let contextMenuTarget = null;
+document.addEventListener('contextmenu', function (event) {
+    contextMenuTarget = event.target;
+}, true);
+
+// Context menu entry: zoom to the right-clicked element, or zoom out if already zoomed
+chrome.runtime.onMessage.addListener(function (message) {
+    if (message === 'toggle-zoom') {
+        zoom.to({ element: contextMenuTarget, padding: zoomPadding });
+    }
+});
 
 // Initialize on load
 init();

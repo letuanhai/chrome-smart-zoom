@@ -19,8 +19,12 @@
         "128": "/images/i128.png"
     },
     "permissions": [
-        "storage"
+        "storage",
+        "contextMenus"
     ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "content_scripts": [
         {
             "matches": [
