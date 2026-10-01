@@ -1,0 +1,12 @@
+{
+  "name": "chrome-smart-zoom",
+  "private": true,
+  "description": "Dev-time only: the dev browser script and its one dependency. manifest.json holds the extension's version.",
+  "scripts": {
+    "dev": "./tools/dev-browser.sh",
+    "package": "./tools/package.sh"
+  },
+  "devDependencies": {
+    "playwright": "^1.55.0"
+  }
+}
