@@ -2,11 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [1.2.0] - 2026-10-01
 
 ### Added
 - Optional "SmartZoom: zoom in / out" context menu entry (off by default)
 - "None" zoom trigger to disable mouse double-click zooming
+
+### Changed
+- Manifest description now describes the zoom gesture directly
+- New store screenshots and description (1.1.0 was rejected by the Chrome Web Store for unrelated media)
 
 ## [1.1.0] - 2026-04-29
 

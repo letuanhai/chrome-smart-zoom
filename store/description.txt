@@ -20,7 +20,7 @@ Settings are saved with Chrome sync and take effect immediately.
 PRIVACY
 SmartZoom works entirely in the page you are viewing. It collects no data, makes no network requests Its only permissions are "storage" (to remember your settings) and "contextMenus" (for the optional right-click menu entry).
 
-WHAT'S NEW IN 1.1
+WHAT'S NEW IN 1.2
 • New settings popup: choose the zoom trigger, padding and animation speed.
 • Optional right-click menu entry to zoom in / out, and a "none" trigger to turn off double-click zooming.
 • Removed mouse panning while zoomed for a steadier zoom.
