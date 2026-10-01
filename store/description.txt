@@ -1,0 +1,26 @@
+SUMMARY (manifest "description", max 132 chars)
+Double right-click any part of a web page to smoothly zoom in on it. Press Esc or double-click again to zoom back out.
+
+DETAILED DESCRIPTION
+SmartZoom brings the macOS "smart zoom" gesture (two-finger double-tap) to Chrome and other Chromium browsers on any operating system.
+
+HOW IT WORKS
+• Double right-click on any element of a web page (a paragraph, table, image or chart) and SmartZoom smoothly zooms in so that element fills the window.
+• Double right-click again, or press Esc, to zoom back out.
+• A single right-click still opens the normal context menu.
+
+SETTINGS
+Click the SmartZoom toolbar icon to change:
+• Zoom trigger: double right-click (default) or double middle-click. Middle-click keeps the context menu completely untouched.
+• Zoom padding: space left around the zoomed element (0–500 px).
+• Transition duration: speed of the zoom animation (0–2000 ms).
+Settings are saved with Chrome sync and take effect immediately.
+
+PRIVACY
+SmartZoom works entirely in the page you are viewing. It collects no data, makes no network requests and only uses the "storage" permission to remember your settings.
+
+WHAT'S NEW IN 1.1
+• New settings popup: choose the zoom trigger, padding and animation speed.
+• Removed mouse panning while zoomed for a steadier zoom.
+
+Credits: zoom.js by Hakim El Hattab (MIT). Icon by Dryicons.
